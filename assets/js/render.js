@@ -1,12 +1,28 @@
+function selectTab (page) {
+  $$('nav li').removeClass('active');
+  $$(`nav li[name=${page}]`).addClass('active');
+}
+
 function render (data) {
-  switch (getPage()) {
-    default: 
+  let page = getPage();
+  selectTab(page);
+  switch (page) {
+    case "sketches":
+      renderSketches(data.sketches);
+      break;
+    case "illustrations": default: 
       renderIllustrations(data.illustrations);
   }
 }
 
 
-function getPage () { return "TODO" }
+function getPage () {
+  return SITE.nav.getActivePage();
+}
+
+function renderSketches (items) {
+  document.querySelector('main').innerHTML = JSON.stringify(items);
+}
 
 function renderIllustrations (items) {
   html = '';

@@ -8,7 +8,29 @@ class Aggregate {
       node.addEventListener('click', () => {
         fn(node);
       });
-    })
+    });
+  }
+  
+  addClass (className) {
+    this.nodes.forEach(node => {
+      node.classList.add(className);
+    });
+  }
+
+  removeClass (className) {
+    this.nodes.forEach(node => {
+      node.classList.remove(className);
+    });
+  }
+
+  toggleClass (className) {
+    this.nodes.forEach(node => {
+      if (node.classList.contains(className)) {
+        node.classList.remove(className);
+      } else {
+        node.classList.add(className);
+      }
+    });
   }
 }
 

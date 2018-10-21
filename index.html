@@ -14,10 +14,11 @@
 
     <nav>
   <ul>
-    <li class="active">Illustrations</li>
-    <li>Sketches</li>
-    <li>Instagram</li>
-    <li>Etsy</li>
+    <li name='illustrations'>Illustrations</li>
+    <li name='sketches'>Sketches</li>
+    <li name='instagram'>Instagram</li>
+    <li name='etsy'>Etsy</li>
+    <li name='contact'>Contact</li>
   </ul>
 </nav>
     <main></main>
@@ -26,6 +27,10 @@
     let data = await SITE.fetch('./data/illustrations.json');
 
     render(data);
+
+    $$('nav li').click((node) => {
+      SITE.nav.goto(node.getAttribute('name'));
+    })
 
     window.SITE.data = data;
   })();

@@ -4,6 +4,10 @@
 
     render(data);
 
+    $$('nav li').click((node) => {
+      SITE.nav.goto(node.getAttribute('name'));
+    })
+
     window.SITE.data = data;
   })();
 </script>
