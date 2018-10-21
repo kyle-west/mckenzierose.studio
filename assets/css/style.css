@@ -1,0 +1,70 @@
+* {
+  /* background colors */
+  --bg-color-1: aliceblue;
+  --bg-color-2: darkcyan;
+  --bg-color-2-hover: darkgreen;
+  
+  /* foreground colors */
+  --fg-color-1: black;
+  --fg-color-2: cornsilk;
+}
+
+
+body {
+  background-color: var(--bg-color-1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15pt;
+}
+
+main, 
+nav {
+  width: 98%;
+  max-width: 800px;
+  margin: auto;
+}
+
+nav {
+  display: table;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+nav ul {
+  display: table-row;
+}
+
+nav ul li {
+  display: table-cell;
+  list-style-type: none;
+  background-color: var(--bg-color-2);
+  padding: 10px;
+  border: 1px solid var(--bg-color-1);
+  color: var(--fg-color-2)
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  background-color: var(--bg-color-2-hover);
+}
+
+nav ul li.active {
+  text-decoration: underline;
+}
+
+
+section.logo {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12pt;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 10pt;
+  }
+}

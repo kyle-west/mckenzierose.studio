@@ -1,0 +1,16 @@
+.icon {
+  --size: 50px;
+
+  width: var(--size);
+  height: var(--size);
+  display: inline-block;
+  background-size: var(--size);
+}
+
+.icon.instagram {
+  background-image: url('../icons/instagram.png');
+}
+
+.icon.etsy {
+  background-image: url('../icons/etsy.png');
+}

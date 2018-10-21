@@ -1,0 +1,9 @@
+<script>
+  (async () => {
+    let data = await SITE.fetch('./data/illustrations.json');
+
+    render(data);
+
+    window.SITE.data = data;
+  })();
+</script>

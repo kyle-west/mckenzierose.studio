@@ -1,0 +1,12 @@
+{
+  "name": "mckenzie-rose-design",
+  "version": "1.0.0",
+  "description": "The best artist in the word needs a website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "python3 builder.py",
+    "start": "python3 -m http.server 5000"
+  },
+  "author": "kyle-west",
+  "license": "UNLICENSED"
+}

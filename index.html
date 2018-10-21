@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="./assets/css/icons.css">
+<link rel="stylesheet" href="./assets/css/illustrations.css">
+<script src="./assets/js/query-lite.js"></script>
+<script src="./assets/js/site-globals.js"></script>
+<script src="./assets/js/render.js"></script>
+  </head>
+  <body>
+    <section class="logo">
+  [[LOGO HERE]]
+</section>
+
+    <nav>
+  <ul>
+    <li class="active">Illustrations</li>
+    <li>Sketches</li>
+    <li>Instagram</li>
+    <li>Etsy</li>
+  </ul>
+</nav>
+    <main></main>
+    <script>
+  (async () => {
+    let data = await SITE.fetch('./data/illustrations.json');
+
+    render(data);
+
+    window.SITE.data = data;
+  })();
+</script>
+  </body>
+</html>
