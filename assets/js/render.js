@@ -7,11 +7,26 @@ function render (data) {
   let page = getPage();
   selectTab(page);
   switch (page) {
+    case "contact":
+      if (SITE.cache.contact) {
+        document.querySelector('main').innerHTML = SITE.cache.contact;
+      } else {
+        SITE.fetchTEXT(SITE.paths.html + 'contact.html').then(renderContactPage);
+      }
+      break;
     case "sketches":
-      renderSketches(data.sketches);
+      if (SITE.cache.sketches) {
+        document.querySelector('main').innerHTML = SITE.cache.sketches;
+      } else {
+        SITE.cache.sketches = renderIllustrations(data.sketches);
+      }
       break;
     case "illustrations": default: 
-      renderIllustrations(data.illustrations);
+    if (SITE.cache.illustrations) {
+      document.querySelector('main').innerHTML = SITE.cache.illustrations;
+    } else {
+      SITE.cache.illustrations = renderIllustrations(data.illustrations);
+    }
   }
 }
 
@@ -20,11 +35,13 @@ function getPage () {
   return SITE.nav.getActivePage();
 }
 
-function renderSketches (items) {
-  document.querySelector('main').innerHTML = JSON.stringify(items);
+function renderContactPage (html) {
+  document.querySelector('main').innerHTML = html;
+  SITE.cache.contact = html;
 }
 
 function renderIllustrations (items) {
+  console.log('renderIllustrations: calculating renderables again')
   html = '';
   items.forEach(item => {
     let name  = (item.name)      ? `<h3 class="title">${item.name}</h3>` : '';
@@ -56,4 +73,5 @@ function renderIllustrations (items) {
   });
 
   document.querySelector('main').innerHTML = html;
+  return html;
 }

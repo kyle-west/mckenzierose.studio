@@ -3,15 +3,23 @@
   
   let SITE = {};
 
-  SITE.fetch = (...args) => {
-    console.log('FETCHING DATA')
+  SITE.fetchJSON = (...args) => {
+    console.log('FETCHING JSON DATA')
     return window.fetch(...args).then(res => {
       return res.json();
     })
   }
 
+  SITE.fetchTEXT = (...args) => {
+    console.log('FETCHING HTML')
+    return window.fetch(...args).then(res => {
+      return res.text();
+    });
+  }
+
   SITE.paths = {
-    images: './assets/images/'
+    images: './assets/images/',
+    html: './assets/html/'
   }
 
   SITE.nav = {};
@@ -33,7 +41,7 @@
     }
   }
   SITE.nav.routes = [
-    'illustrations', 'sketches'
+    'illustrations', 'sketches', 'contact'
   ];
   SITE.nav.externalRoutes = {
     etsy: 'https://www.etsy.com/shop/McKenzieRoseDesign',
@@ -45,6 +53,8 @@
       render(window.SITE.data);
     }
   })
+
+  SITE.cache = {}
 
   window.SITE = SITE;
 })(window);

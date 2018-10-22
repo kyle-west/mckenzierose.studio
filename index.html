@@ -24,7 +24,7 @@
     <main></main>
     <script>
   (async () => {
-    let data = await SITE.fetch('./data/illustrations.json');
+    let data = await SITE.fetchJSON('./data/illustrations.json');
 
     render(data);
 
