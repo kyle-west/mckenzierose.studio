@@ -56,10 +56,26 @@ section.logo {
   text-align: center;
 }
 
+nav.mobile.hide {
+  display: table;
+}
 
-@media only screen and (max-width: 480px) {
+nav.mobile.show {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
   body {
     font-size: 12pt;
+    text-align: center;
+  }
+  nav .icon {
+    --size: 20px;
+    margin-bottom: -4px;
+  }
+
+  nav .contains-icon {
+    padding: 3px;
   }
 }
 
@@ -67,4 +83,13 @@ section.logo {
   body {
     font-size: 10pt;
   }
+
+  nav.mobile.hide {
+    display: none;
+  }
+  
+  nav.mobile.show {
+    display: table;
+  }
+  
 }

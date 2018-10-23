@@ -27,6 +27,7 @@
   .illustration .item,
   .illustration .item .data {
     display: block;
+    padding-right: 0px;
   }
 
   .illustration img {
