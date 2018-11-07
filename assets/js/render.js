@@ -61,7 +61,7 @@ function renderIllustrations (items) {
         <div class='data'>
           ${image}
         </div>
-        <div class='data'>
+        <div class='data text'>
           ${name}
           ${media}
           ${date}

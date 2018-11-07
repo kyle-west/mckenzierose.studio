@@ -11,23 +11,37 @@
 .illustration .item .data {
   display: table-cell;
   vertical-align: middle;
-  padding-right: 15px;
+}
+
+.illustration .item .data.text {
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 100%;
 }
 
 .illustration img {
-  height: 50vh;
+  width: 75vh;
 }
 
 .date {
   font-style: italic;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
+  
+  .illustration {
+    margin-bottom: 50px;
+  }
+  
   .illustration,
   .illustration .item,
   .illustration .item .data {
     display: block;
     padding-right: 0px;
+  }
+  
+  .illustration .item .data.text {
+    width: auto;
   }
 
   .illustration img {
