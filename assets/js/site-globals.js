@@ -56,5 +56,5 @@
 
   SITE.cache = {}
 
-  window.SITE = SITE;
+  window.SITE = SITE; 
 })(window);
