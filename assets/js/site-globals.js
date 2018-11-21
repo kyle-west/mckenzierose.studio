@@ -45,7 +45,7 @@
   ];
   SITE.nav.externalRoutes = {
     etsy: 'https://www.etsy.com/shop/McKenzieRoseDesign',
-    instagram: 'https://www.instagram.com/mckenzierose_design/'
+    instagram: 'https://www.instagram.com/mckenzierose_studio/'
   };
 
   window.addEventListener('popstate', (e) => {
