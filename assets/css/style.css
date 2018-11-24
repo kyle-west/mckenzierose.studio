@@ -16,6 +16,10 @@ body {
   font-size: 15pt;
 }
 
+main {
+  min-height: 65vh;
+}
+
 main, 
 nav {
   width: 98%;
@@ -54,7 +58,15 @@ nav ul li.active {
 
 section.logo {
   text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
+section.logo img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
 
 nav.mobile.hide {
   display: table;
@@ -62,6 +74,21 @@ nav.mobile.hide {
 
 nav.mobile.show {
   display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .img-wrapper {
+    position: relative;
+    overflow:hidden;
+    height: 200px;
+  }
+  
+  .img-wrapper img {
+    width: 100%;
+    position: absolute;
+    top:-100%; left:0; right: 0; bottom:-100%;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 600px) {
