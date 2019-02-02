@@ -4,9 +4,14 @@
   "description": "The best artist in the word needs a website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "python3 builder.py",
-    "start": "python3 -m http.server 5000"
+    "build": "sh _scripts/build.sh",
+    "start": "python3 -m http.server 5000",
+    "preinstall": "sh _scripts/preinstall.sh",
+    "postinstall": "sh _scripts/postinstall.sh"
   },
   "author": "kyle-west",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git"
+  }
 }
