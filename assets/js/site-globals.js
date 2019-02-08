@@ -25,7 +25,7 @@
   SITE.nav = {};
   SITE.nav.getActivePage = () => {
     if (!window.location.search) {
-      SITE.nav.goto('illustrations', true);
+      SITE.nav.goto('highlights', true);
     } else {
       return new URL(window.location.href).searchParams.get('page');
     }
@@ -35,13 +35,13 @@
     if (refresh) window.location = '/?page=' + page;
     if (SITE.nav.routes.includes(page)) {
       window.history.pushState({page}, page, '/?page=' + page);
-      render(window.SITE.data);
+      render(window.SITE.assets);
     } else {
       window.open(SITE.nav.externalRoutes[page]);
     }
   }
   SITE.nav.routes = [
-    'illustrations', 'sketches', 'contact'
+    'highlights', 'illustrations', 'contact'
   ];
   SITE.nav.externalRoutes = {
     etsy: 'https://www.etsy.com/shop/McKenzieRoseDesign',
@@ -50,11 +50,14 @@
 
   window.addEventListener('popstate', (e) => {
     if (e.state.page) {
-      render(window.SITE.data);
+      render(window.SITE.assets);
     }
   })
 
   SITE.cache = {}
+  SITE.clearCache = () => {
+    SITE.cache = {};
+  };
 
   window.SITE = SITE; 
 })(window);

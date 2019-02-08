@@ -10,6 +10,7 @@
 <script src="./assets/js/query-lite.js"></script>
 <script src="./assets/js/site-globals.js"></script>
 <script src="./assets/js/render.js"></script>
+<script src="./assets/js/image-placement.js"></script>
   </head>
   <body>
     <section class="logo">
@@ -20,8 +21,8 @@
 
     <nav class="mobile hide">
   <ul>
+    <li name='highlights'>Highlights</li>
     <li name='illustrations'>Illustrations</li>
-    <li name='sketches'>Sketches</li>
     <li name='instagram'>Instagram</li>
     <li name='etsy'>Etsy</li>
     <li name='contact'>Contact</li>
@@ -30,8 +31,8 @@
 
 <nav class="mobile show">
   <ul>
+    <li name='highlights'>Highlights</li>
     <li name='illustrations'>Illustrations</li>
-    <li name='sketches'>Sketches</li>
     <li class="contains-icon" name='instagram'><i class="icon instagram"></i></li>
     <li class="contains-icon" name='etsy'><i class="icon etsy"></i></li>
     <li name='contact'>Contact</li>
@@ -40,15 +41,13 @@
     <main></main>
     <script>
   (async () => {
-    let data = await SITE.fetchJSON('./data/illustrations.json');
-
-    render(data);
+    let assets = await SITE.fetchJSON('./content/asset.manifest.json');
+    window.SITE.assets = assets;
+    render(assets);
 
     $$('nav li').click((node) => {
       SITE.nav.goto(node.getAttribute('name'));
     })
-
-    window.SITE.data = data;
   })();
 </script>
   </body>
