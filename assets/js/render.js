@@ -3,7 +3,7 @@ function selectTab (page) {
   $$(`nav li[name=${page}]`).addClass('active');
 }
 
-function render (data) {
+function render (assets) {
   let page = getPage();
   selectTab(page);
   switch (page) {
@@ -14,18 +14,18 @@ function render (data) {
         SITE.fetchTEXT(SITE.paths.html + 'contact.html').then(renderContactPage);
       }
       break;
-    case "sketches":
-      if (SITE.cache.sketches) {
-        document.querySelector('main').innerHTML = SITE.cache.sketches;
+    case "illustrations": 
+      if (SITE.cache.illustrations) {
+        document.querySelector('main').innerHTML = SITE.cache.illustrations;
       } else {
-        SITE.cache.sketches = renderIllustrations(data.sketches);
+        SITE.cache.illustrations = renderImages(assets.illustrations, 'illustrations');
       }
       break;
-    case "illustrations": default: 
-    if (SITE.cache.illustrations) {
-      document.querySelector('main').innerHTML = SITE.cache.illustrations;
+    case "highlights": default: 
+    if (SITE.cache.highlights) {
+      document.querySelector('main').innerHTML = SITE.cache.highlights;
     } else {
-      SITE.cache.illustrations = renderIllustrations(data.illustrations);
+      SITE.cache.highlights = renderImages(assets.highlights, 'highlights');
     }
   }
 }
@@ -40,38 +40,47 @@ function renderContactPage (html) {
   SITE.cache.contact = html;
 }
 
-function renderIllustrations (items) {
-  console.log('renderIllustrations: calculating renderables again')
-  html = '';
-  items.forEach(item => {
-    let name  = (item.name)      ? `<h3 class="title">${item.name}</h3>` : '';
-    let image = (item.imageName) ? `<img src='${SITE.paths.images + item.imageName}'/>` : '';
-    let date  = (item.date)      ? `<p class="date">${item.date}</p>`: '';
-    let media = (item.media)     ? `<p class="media">${item.media}</p>`: '';
+function renderImages (images, type) {
+  console.log(`renderImages: calculating renderables for '${type}'`)
+  let colOpen = false;
+  let interval = Math.floor(images.length / 2.5);
+  html = '<div class="illustration-wrapper row"><div class="column">';
+  images.forEach((image, idx) => {
+    if (idx > 0 && idx % interval === 0) {
+      html += "</div><div class='column'>";
+    }
 
-    let instagram = (item.instagram) ? `
-      <a target="_blank" href="${item.instagram}"><i class="icon instagram"></i></a>
-    ` : '' 
-    let etsy = (item.etsy) ? `
-      <a target="_blank" href="${item.etsy}"><i class="icon etsy"></i></a>
-    ` : '' 
-    
-    html += `<section class="illustration">
-      <div class='item'>
-        <div class='data'>
-          ${image}
-        </div>
-        <div class='data text'>
-          ${name}
-          ${media}
-          ${date}
-          ${etsy}
-          ${instagram}
-        </div>
-      </div>
-    </section>`;
+    html += `<img class="" src="${SITE.assets.meta.paths[type]}/${image}">`;
   });
+  html += '</div></div>';
 
   document.querySelector('main').innerHTML = html;
   return html;
 }
+
+/**
+ * Randomly shuffle an array
+ * https://stackoverflow.com/a/2450976/1293256
+ * @param  {Array} array The array to shuffle
+ * @return {String}      The first item in the shuffled array
+ */
+var shuffle = function (array) {
+
+	var currentIndex = array.length;
+	var temporaryValue, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+
+};

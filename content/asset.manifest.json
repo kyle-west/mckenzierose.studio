@@ -1,15 +1,15 @@
 {
   "meta": {
-    "last_updated": "2019-02-01T03:06:20.126Z",
+    "last_updated": "2019-02-02T02:11:37.301Z",
     "counts": {
       "highlights": 14,
       "illustrations": 19,
       "black-and-white": 17
     },
     "paths": {
-      "highlights": "./images/highlights",
-      "illustrations": "./images/illustrations",
-      "black-and-white": "./images/black-and-white"
+      "highlights": "./content/images/highlights",
+      "illustrations": "./content/images/illustrations",
+      "black-and-white": "./content/images/black-and-white"
     },
     "folders": [
       "highlights",

@@ -1,6 +1,6 @@
 {
-  "name": "mckenzie-rose-design",
-  "version": "1.0.0",
+  "name": "mckenzie-rose-studio",
+  "version": "1.1.0",
   "description": "The best artist in the word needs a website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

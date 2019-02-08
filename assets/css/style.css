@@ -1,6 +1,6 @@
 * {
   /* background colors */
-  --bg-color-1: aliceblue;
+  --bg-color-1: white;
   --bg-color-2: darkcyan;
   --bg-color-2-hover: darkgreen;
   
@@ -23,7 +23,7 @@ main {
 main, 
 nav {
   width: 98%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
 }
 
@@ -60,6 +60,8 @@ section.logo {
   text-align: center;
   width: 100%;
   overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
 }
 section.logo img {
   width: 100%;

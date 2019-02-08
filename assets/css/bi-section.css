@@ -1,0 +1,55 @@
+.bi-section {
+  display: table;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.bi-section .item {
+  display: table-row
+}
+
+.bi-section .item .data {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bi-section .item .data.text {
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 100%;
+}
+
+.bi-section img {
+  width: 75vh;
+}
+
+.date {
+  font-style: italic;
+}
+
+@media only screen and (max-width: 900px) {
+  
+  .bi-section {
+    margin-bottom: 50px;
+  }
+  
+  .bi-section,
+  .bi-section .item,
+  .bi-section .item .data {
+    display: block;
+    padding-right: 0px;
+  }
+  
+  .bi-section .item .data.text {
+    width: auto;
+  }
+
+  .bi-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .bi-section .data {
+    text-align: center;
+  }
+}
