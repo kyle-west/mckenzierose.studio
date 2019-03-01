@@ -1,12 +1,9 @@
 * {
   /* background colors */
   --bg-color-1: white;
-  --bg-color-2: darkcyan;
-  --bg-color-2-hover: darkgreen;
   
   /* foreground colors */
   --fg-color-1: black;
-  --fg-color-2: cornsilk;
 }
 
 
@@ -40,15 +37,14 @@ nav ul {
 nav ul li {
   display: table-cell;
   list-style-type: none;
-  background-color: var(--bg-color-2);
   padding: 10px;
   border: 1px solid var(--bg-color-1);
-  color: var(--fg-color-2)
+  color: var(--fg-color-1);
+  text-align: center;
 }
 
 nav ul li:hover {
   cursor: pointer;
-  background-color: var(--bg-color-2-hover);
 }
 
 nav ul li.active {
