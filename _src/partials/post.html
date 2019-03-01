@@ -2,10 +2,10 @@
   (async () => {
     let assets = await SITE.fetchJSON('./content/asset.manifest.json');
     window.SITE.assets = assets;
-    render(assets);
+    // render(assets);
 
-    $$('nav li').click((node) => {
-      SITE.nav.goto(node.getAttribute('name'));
-    })
+    // $$('nav li').click((node) => {
+    //   SITE.nav.goto(node.getAttribute('name'));
+    // })
   })();
 </script>

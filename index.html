@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>McKenzie Rose Studio</title>
-<script src="./assets/js/routing.js"></script>
+<script src="./assets/js/routing.js" type="module"></script>
 <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./assets/css/style.css">
@@ -22,11 +22,11 @@
 
     <nav class="mobile hide">
   <ul>
-    <li name='highlights'>Highlights</li>
-    <li name='illustrations'>Illustrations</li>
-    <li name='instagram'>Instagram</li>
-    <li name='etsy'>Etsy</li>
-    <li name='contact'>Contact</li>
+    <li> <a href='highlights'>Highlights</a> </li>
+    <li> <a href='illustrations'>Illustrations</a> </li>
+    <li> <a href='instagram'>Instagram</a> </li>
+    <li> <a href='etsy'>Etsy</a> </li>
+    <li> <a href='contact'>Contact</a> </li>
   </ul>
 </nav>
 
@@ -44,11 +44,11 @@
   (async () => {
     let assets = await SITE.fetchJSON('./content/asset.manifest.json');
     window.SITE.assets = assets;
-    render(assets);
+    // render(assets);
 
-    $$('nav li').click((node) => {
-      SITE.nav.goto(node.getAttribute('name'));
-    })
+    // $$('nav li').click((node) => {
+    //   SITE.nav.goto(node.getAttribute('name'));
+    // })
   })();
 </script>
   </body>

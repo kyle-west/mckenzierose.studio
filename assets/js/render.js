@@ -3,32 +3,37 @@ function selectTab (page) {
   $$(`nav li[name=${page}]`).addClass('active');
 }
 
-function render (assets) {
-  let page = getPage();
-  selectTab(page);
-  switch (page) {
-    case "contact":
-      if (SITE.cache.contact) {
-        document.querySelector('main').innerHTML = SITE.cache.contact;
-      } else {
-        SITE.fetchTEXT(SITE.paths.html + 'contact.html').then(renderContactPage);
-      }
-      break;
-    case "illustrations": 
-      if (SITE.cache.illustrations) {
-        document.querySelector('main').innerHTML = SITE.cache.illustrations;
-      } else {
-        SITE.cache.illustrations = renderImages(assets.illustrations, 'illustrations');
-      }
-      break;
-    case "highlights": default: 
-    if (SITE.cache.highlights) {
-      document.querySelector('main').innerHTML = SITE.cache.highlights;
-    } else {
-      SITE.cache.highlights = renderImages(assets.highlights, 'highlights');
-    }
-  }
+function renderPage (context) {
+  debugger;
+  // let page = getPage();
+  // selectTab(page);
+  // switch (page) {
+  //   case "contact":
+  //     if (SITE.cache.contact) {
+  //       document.querySelector('main').innerHTML = SITE.cache.contact;
+  //     } else {
+  //       SITE.fetchTEXT(SITE.paths.html + 'contact.html').then(renderContactPage);
+  //     }
+  //     break;
+  //   case "illustrations": 
+  //     if (SITE.cache.illustrations) {
+  //       document.querySelector('main').innerHTML = SITE.cache.illustrations;
+  //     } else {
+  //       SITE.cache.illustrations = renderImages(assets.illustrations, 'illustrations');
+  //     }
+  //     break;
+  //   case "highlights": default: 
+  //   if (SITE.cache.highlights) {
+  //     document.querySelector('main').innerHTML = SITE.cache.highlights;
+  //   } else {
+  //     SITE.cache.highlights = renderImages(assets.highlights, 'highlights');
+  //   }
+  // }
 }
+
+let router = window.attachedClientRouter;
+
+router.use('/highlights', renderPage);
 
 
 function getPage () {

@@ -1,1 +1,1 @@
-rm -rf content
+rm -rf content lib

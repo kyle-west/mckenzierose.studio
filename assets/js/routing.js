@@ -9,3 +9,6 @@
   }
 })(window.location);
 
+import {ClientRouter} from '/lib/client-router.js';
+let router = new ClientRouter({debug:true});
+router.registerOn(window);

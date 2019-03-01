@@ -12,6 +12,7 @@
   "author": "kyle-west",
   "license": "UNLICENSED",
   "dependencies": {
-    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git"
+    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git",
+    "client-router": "git+https://github.com/kyle-west/client-router.git"
   }
 }
