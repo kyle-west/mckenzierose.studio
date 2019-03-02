@@ -50,7 +50,7 @@ function renderImages (images, type) {
       html += "</div><div class='column'>";
     }
 
-    html += `<img class="" src="${SITE.assets.meta.paths[type]}/${image}">`;
+    html += `<img class="" src="${SITE.assets.meta.minPaths[type]}/${image}">`;
   });
   html += '</div></div>';
 

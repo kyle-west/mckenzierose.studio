@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2019-03-02T01:11:37.099Z",
+    "last_updated": "2019-03-02T14:37:05.645Z",
     "counts": {
       "highlights": 17,
       "illustrations": 18,
@@ -15,7 +15,12 @@
       "highlights",
       "illustrations",
       "black-and-white"
-    ]
+    ],
+    "minPaths": {
+      "black-and-white": "./content/min/images/black-and-white",
+      "highlights": "./content/min/images/highlights",
+      "illustrations": "./content/min/images/illustrations"
+    }
   },
   "highlights": [
     "flower-girl.jpg",
