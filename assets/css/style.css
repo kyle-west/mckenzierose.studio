@@ -4,6 +4,8 @@
   
   /* foreground colors */
   --fg-color-1: black;
+
+  --nav-margin: 30px;
 }
 
 
@@ -26,8 +28,8 @@ nav {
 
 nav {
   display: table;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: var(--nav-margin);
+  margin-bottom: var(--nav-margin);
 }
 
 nav ul {
@@ -60,11 +62,14 @@ section.logo {
   margin: auto;
 }
 section.logo img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100px;
   margin: auto;
 }
 
+section.logo .name img {
+  height: 75px;
+}
 
 nav.mobile.hide {
   display: table;
@@ -74,18 +79,25 @@ nav.mobile.show {
   display: none;
 }
 
-@media only screen and (min-width: 900px) {
-  .img-wrapper {
-    position: relative;
-    overflow:hidden;
-    height: 200px;
+@media screen and (max-width: 650px) {
+  section.logo .img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
   }
-  
-  .img-wrapper img {
-    width: 100%;
-    position: absolute;
-    top:-100%; left:0; right: 0; bottom:-100%;
-    margin: auto;
+
+  section.logo *:not(.name) img {
+    margin: unset;
+  }
+
+  section.logo .name img {
+    height: 50px;
+    display: block;
+    margin: none;
+  }
+
+  section.logo .name img.-m- {
+    margin-left: -16px;
   }
 }
 
@@ -116,10 +128,17 @@ nav.mobile.show {
   nav.mobile.show {
     display: table;
   }
+
+  section.logo img {
+    height: 75px;
+  }
   
+  section.logo .name img {
+    height: 37px;
+  }
 }
 @media only screen and (max-width: 320px) {
-  * {
+  *:not(section.logo) {
     width: 100%;
     margin: auto;
   }
