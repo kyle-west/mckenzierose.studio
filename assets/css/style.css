@@ -101,6 +101,17 @@ nav.mobile.show {
   }
 }
 
+@media only screen and (max-width: 750px) {
+  nav.mobile.hide {
+    display: none;
+  }
+  
+  nav.mobile.show {
+    display: table;
+  }
+}
+
+
 @media only screen and (max-width: 600px) {
   body {
     font-size: 12pt;
@@ -121,13 +132,6 @@ nav.mobile.show {
     font-size: 10pt;
   }
 
-  nav.mobile.hide {
-    display: none;
-  }
-  
-  nav.mobile.show {
-    display: table;
-  }
 
   section.logo img {
     height: 75px;
