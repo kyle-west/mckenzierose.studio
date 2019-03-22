@@ -41,7 +41,7 @@
     }
   }
   SITE.nav.routes = [
-    'highlights', 'illustrations', 'contact'
+    'highlights', 'illustrations', 'contact', 'black-and-white'
   ];
   SITE.nav.externalRoutes = {
     etsy: 'https://www.etsy.com/shop/McKenzieRoseDesign',

@@ -3,6 +3,14 @@ function selectTab (page) {
   $$(`nav li[name=${page}]`).addClass('active');
 }
 
+function conditionalRender (assets, page) {
+  if (SITE.cache[page]) {
+    document.querySelector('main').innerHTML = SITE.cache[page];
+  } else {
+    SITE.cache[page] = renderImages(assets[page], page);
+  }
+}
+
 function render (assets) {
   let page = getPage();
   selectTab(page);
@@ -14,19 +22,7 @@ function render (assets) {
         SITE.fetchTEXT(SITE.paths.html + 'contact.html').then(renderContactPage);
       }
       break;
-    case "illustrations": 
-      if (SITE.cache.illustrations) {
-        document.querySelector('main').innerHTML = SITE.cache.illustrations;
-      } else {
-        SITE.cache.illustrations = renderImages(assets.illustrations, 'illustrations');
-      }
-      break;
-    case "highlights": default: 
-    if (SITE.cache.highlights) {
-      document.querySelector('main').innerHTML = SITE.cache.highlights;
-    } else {
-      SITE.cache.highlights = renderImages(assets.highlights, 'highlights');
-    }
+    default: conditionalRender(assets, page)
   }
 }
 
@@ -57,30 +53,3 @@ function renderImages (images, type) {
   document.querySelector('main').innerHTML = html;
   return html;
 }
-
-/**
- * Randomly shuffle an array
- * https://stackoverflow.com/a/2450976/1293256
- * @param  {Array} array The array to shuffle
- * @return {String}      The first item in the shuffled array
- */
-var shuffle = function (array) {
-
-	var currentIndex = array.length;
-	var temporaryValue, randomIndex;
-
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
-
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
-
-	return array;
-
-};
