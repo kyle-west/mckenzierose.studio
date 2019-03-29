@@ -38,6 +38,10 @@
       render(window.SITE.assets);
     } else {
       window.open(SITE.nav.externalRoutes[page]);
+      gtag('config', 'UA-136826563-1', {
+        'page_title' : page,
+        'page_path': `/:goto:/${page}`
+      });
     }
   }
   SITE.nav.routes = [
@@ -47,17 +51,25 @@
     etsy: 'https://www.etsy.com/shop/McKenzieRoseDesign',
     instagram: 'https://www.instagram.com/mckenzierose_studio/'
   };
-
+  
   window.addEventListener('popstate', (e) => {
     if (e.state.page) {
       render(window.SITE.assets);
     }
   })
-
+  
   SITE.cache = {}
   SITE.clearCache = () => {
     SITE.cache = {};
   };
+  
+  SITE.trackMediaClick = (elem) => {
+    let page = elem.name;
+    gtag('config', 'UA-136826563-1', {
+      'page_title' : page,
+      'page_path': `/:goto:/${page}?via=contact`
+    });
+  }
 
   window.SITE = SITE; 
 })(window);

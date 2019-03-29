@@ -73,7 +73,8 @@
     render(assets);
 
     $$('nav li').click((node) => {
-      SITE.nav.goto(node.getAttribute('name'));
+      let page = node.getAttribute('name');
+      SITE.nav.goto(page);
     })
   })();
 </script>

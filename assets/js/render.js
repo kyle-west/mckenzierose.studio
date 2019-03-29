@@ -24,6 +24,11 @@ function render (assets) {
       break;
     default: conditionalRender(assets, page)
   }
+
+  gtag('config', 'UA-136826563-1', {
+    'page_title' : page,
+    'page_path': location.pathname + location.search
+  });
 }
 
 
