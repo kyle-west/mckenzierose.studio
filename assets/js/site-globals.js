@@ -38,7 +38,7 @@
       render(window.SITE.assets);
     } else {
       window.open(SITE.nav.externalRoutes[page]);
-      gtag('config', 'UA-136826563-1', {
+      gtag && gtag('config', 'UA-136826563-1', {
         'page_title' : page,
         'page_path': `/:goto:/${page}`
       });
@@ -65,7 +65,7 @@
   
   SITE.trackMediaClick = (elem) => {
     let page = elem.name;
-    gtag('config', 'UA-136826563-1', {
+    gtag && gtag('config', 'UA-136826563-1', {
       'page_title' : page,
       'page_path': `/:goto:/${page}?via=contact`
     });
