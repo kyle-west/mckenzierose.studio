@@ -25,7 +25,7 @@ function render (assets) {
     default: conditionalRender(assets, page)
   }
 
-  gtag('config', 'UA-136826563-1', {
+  gtag && gtag('config', 'UA-136826563-1', {
     'page_title' : page,
     'page_path': location.pathname + location.search
   });
