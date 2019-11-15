@@ -25,7 +25,7 @@
   SITE.nav = {};
   SITE.nav.getActivePage = () => {
     if (!window.location.search) {
-      SITE.nav.goto('highlights', true);
+      SITE.nav.goto('illustrations', true);
     } else {
       return new URL(window.location.href).searchParams.get('page');
     }
@@ -36,17 +36,21 @@
     if (SITE.nav.routes.includes(page)) {
       window.history.pushState({page}, page, '/?page=' + page);
       render(window.SITE.assets);
-    } else {
+    } else if (SITE.nav.externalRoutes[page]) {
       window.open(SITE.nav.externalRoutes[page]);
       gtag && gtag('config', 'UA-136826563-1', {
         'page_title' : page,
         'page_path': `/:goto:/${page}`
       });
+    } else {
+      gtag && gtag('config', 'UA-136826563-1', {
+        'page_title' : 'UNKNOWN_PAGE:' + page,
+        'page_path': `/:goto:/${page}`
+      });
+      SITE.nav.goto('illustrations')
     }
   }
-  SITE.nav.routes = [
-    'highlights', 'illustrations', 'contact', 'black-and-white'
-  ];
+  SITE.nav.routes = window.localizedRoutes;
   SITE.nav.externalRoutes = {
     etsy: 'https://www.etsy.com/shop/McKenzieRoseDesign',
     instagram: 'https://www.instagram.com/mckenzierose_studio/'

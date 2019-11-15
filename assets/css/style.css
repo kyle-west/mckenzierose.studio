@@ -27,19 +27,21 @@ nav {
 }
 
 nav {
-  display: table;
+  display: block;
   margin-top: var(--nav-margin);
   margin-bottom: var(--nav-margin);
 }
 
 nav ul {
-  display: table-row;
+  display: flex;
+  padding: 0 var(--nav-margin);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav ul li {
-  display: table-cell;
   list-style-type: none;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid var(--bg-color-1);
   color: var(--fg-color-1);
   text-align: center;
@@ -71,14 +73,6 @@ section.logo .name img {
   height: 75px;
 }
 
-nav.mobile.hide {
-  display: table;
-}
-
-nav.mobile.show {
-  display: none;
-}
-
 @media screen and (max-width: 650px) {
   section.logo .img-wrapper {
     display: flex;
@@ -101,29 +95,15 @@ nav.mobile.show {
   }
 }
 
-@media only screen and (max-width: 750px) {
-  nav.mobile.hide {
-    display: none;
-  }
-  
-  nav.mobile.show {
-    display: table;
-  }
-}
-
 
 @media only screen and (max-width: 600px) {
   body {
     font-size: 12pt;
     text-align: center;
   }
-  nav .icon {
-    --size: 20px;
-    margin-bottom: -4px;
-  }
 
-  nav .contains-icon {
-    padding: 3px;
+  nav ul li {
+    padding: 10px;
   }
 }
 
@@ -131,7 +111,6 @@ nav.mobile.show {
   body {
     font-size: 10pt;
   }
-
 
   section.logo img {
     height: 75px;
@@ -141,6 +120,7 @@ nav.mobile.show {
     height: 37px;
   }
 }
+
 @media only screen and (max-width: 320px) {
   *:not(section.logo) {
     width: 100%;
