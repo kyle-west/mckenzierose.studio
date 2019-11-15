@@ -1,84 +1,97 @@
 {
   "meta": {
-    "last_updated": "2019-03-02T14:37:05.645Z",
+    "last_updated": "2019-11-15T21:49:38.566Z",
     "counts": {
-      "highlights": 17,
-      "illustrations": 18,
-      "black-and-white": 17
+      "animals": 8,
+      "black-and-white": 10,
+      "illustrations": 17,
+      "character-design": 25
     },
     "paths": {
-      "highlights": "./content/images/highlights",
+      "animals": "./content/images/animals",
+      "black-and-white": "./content/images/black-and-white",
       "illustrations": "./content/images/illustrations",
-      "black-and-white": "./content/images/black-and-white"
+      "character-design": "./content/images/character-design"
     },
     "folders": [
-      "highlights",
+      "animals",
+      "black-and-white",
       "illustrations",
-      "black-and-white"
+      "character-design"
     ],
     "minPaths": {
       "black-and-white": "./content/min/images/black-and-white",
-      "highlights": "./content/min/images/highlights",
-      "illustrations": "./content/min/images/illustrations"
+      "character-design": "./content/min/images/character-design",
+      "illustrations": "./content/min/images/illustrations",
+      "animals": "./content/min/images/animals"
     }
   },
-  "highlights": [
-    "flower-girl.jpg",
-    "snow-white-red-rose.jpg",
-    "russian-birthday.jpg",
-    "big-blue-house.jpg",
-    "african-hut.jpg",
-    "african-market.jpg",
-    
-    "swimming-in-clouds.jpg",
-    "grandma-crying.jpg",
-    "fox.jpg",
-    "ghana-trees.jpg",
-    "house-on-a-hill.jpg",
-    "riding-bikes.jpg",
-    
-    "melissa-book-cover.jpg",
-    "russian-landscape.jpg",
-    "picking-a-book.jpg",
-    "momma-and-me-giraffe.jpg",
-    "winter-treehouse.jpg"
-  ],
-  "illustrations": [
-    "sun-girl-white-background.jpg",
-    "baking.jpg",
-    "bee-homes.jpg",
-    "bess-and-the-big-book.jpg",
-    "i-see-a-deer.jpg",
-    "rocket.jpg",
+  "animals": [
     "caiman-lizard.jpg",
-    
-    "ken-sits-on-the-books.jpg",
-    "house-on-a-hill.jpg",
-    "picnic.jpg",
-    "grass-painting.jpg",
-    "play-a-game.jpg",
-    "playing-at-river.jpg",
+    "deer-momma-and-baby-night.jpg",
+    "deer-momma-and-baby.jpg",
+    "fox.jpg",
+    "i-see-a-deer.jpg",
     "momma-and-me-elephant.jpg",
-    
-    "momma-and-me-panda.jpg",
-    "happy-bee.jpg",
-    "boy-and-girl-rain.jpg",
-    "wild-flower-study.jpg"
+    "momma-and-me-giraffe.jpg",
+    "momma-and-me-panda.jpg"
   ],
   "black-and-white": [
     "inktober-2018-01-sunflower.jpg",
     "inktober-2018-02-bear.jpg",
-    "inktober-2018-23-pie.jpg",
-    "inktober-2018-21-shrub.jpg",
-    
-    "inktober-2018-06-lion.jpg",
-    "inktober-2018-24-tree.jpg",
-    "inktober-2018-12-flower.jpg",
-    "inktober-2018-05-dog.jpg",
-    
-    "inktober-2018-18-dino.jpg",
-    "inktober-2018-16-deer.jpg",
     "inktober-2018-03-pumpkins.jpg",
-    "inktober-2018-11-max.jpg"
+    "inktober-2018-05-dog.jpg",
+    "inktober-2018-06-lion.jpg",
+    "inktober-2018-11-max.jpg",
+    "inktober-2018-12-flower.jpg",
+    "inktober-2018-16-deer.jpg",
+    "inktober-2018-18-dino.jpg",
+    "inktober-2018-24-tree.jpg"
+  ],
+  "illustrations": [
+    "crown.jpg",
+    "dance.jpg",
+    "darkness.jpg",
+    "folktake-week-2019.jpg",
+    "forest.jpg",
+    "ghana-trees.jpg",
+    "grandma-crying.jpg",
+    "melissa-book-cover.jpg",
+    "prince-percy-bridge.jpg",
+    "prince-percy-carriage.jpg",
+    "prince-percy-trees.jpg",
+    "russian-landscape.jpg",
+    "sheep-farm.jpg",
+    "sheep-hill.jpg",
+    "snow-white-red-rose.jpg",
+    "tree-house-town-kids.jpg",
+    "winter-treehouse.jpg"
+  ],
+  "character-design": [
+    "african-family.jpg",
+    "african-hut.jpg",
+    "african-market.jpg",
+    "book-cover-efe.jpg",
+    "books.jpg",
+    "character-babushka.jpg",
+    "character-boris.jpg",
+    "character-efe.jpg",
+    "character-lineup-0.jpg",
+    "character-lineup-1.jpg",
+    "character-lineup-2.jpg",
+    "character-malia-1.jpg",
+    "character-omar-1.jpg",
+    "character-prince-percy.jpg",
+    "character-robin-1.jpg",
+    "frida-kahlo.jpg",
+    "katherine-johnson.jpg",
+    "picnic.jpg",
+    "prince-percy-ground.jpg",
+    "prince-percy-horse.jpg",
+    "prince-percy-street.jpg",
+    "prince-percy-thrown.jpg",
+    "prince-percy-tree.jpg",
+    "russian-birthday.jpg",
+    "swimming-in-clouds.jpg"
   ]
 }
