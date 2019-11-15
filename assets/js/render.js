@@ -1,6 +1,8 @@
 function selectTab (page) {
   $$('nav li').removeClass('active');
   $$(`nav li[name=${page}]`).addClass('active');
+  let subPage = document.querySelector(`nav li[name=${page}]`).innerText.trim()
+  document.title = `McKenzie Rose Studio | ${subPage}`
 }
 
 function conditionalRender (assets, page) {
@@ -51,7 +53,7 @@ function renderImages (images, type) {
       html += "</div><div class='column'>";
     }
 
-    html += `<img class="" src="${SITE.assets.meta.minPaths[type]}/${image}">`;
+    html += `<img src="${SITE.assets.meta.minPaths[type]}/${image}">`;
   });
   html += '</div></div>';
 
