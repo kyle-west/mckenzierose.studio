@@ -43,10 +43,15 @@ function renderContactPage (html) {
   SITE.cache.contact = html;
 }
 
+const pageDividerIntervals = {
+  'illustrations' : 2.5,
+  'animals' : 2.5,
+}
+
 function renderImages (images, type) {
   console.log(`renderImages: calculating renderables for '${type}'`)
   let colOpen = false;
-  let interval = Math.floor(images.length / 2.5);
+  let interval = Math.floor(images.length / (pageDividerIntervals[type] || 3));
   html = '<div class="illustration-wrapper row"><div class="column">';
   images.forEach((image, idx) => {
     if (idx > 0 && idx % interval === 0) {
