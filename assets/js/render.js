@@ -43,6 +43,8 @@ function renderContactPage (html) {
   SITE.cache.contact = html;
 }
 
+const humanReadable = str => str.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
+
 const pageDividerIntervals = {
   'illustrations' : 2.5,
   'animals' : 2.5,
@@ -58,7 +60,9 @@ function renderImages (images, type) {
       html += "</div><div class='column'>";
     }
 
-    html += `<img src="${SITE.assets.meta.minPaths[type]}/${image}">`;
+    let [name] = image.split('.')
+    let altText = `${humanReadable(window.getPage())}: ${humanReadable(name)}`
+    html += `<img alt="${altText}" class="showcase-image" src="${SITE.assets.meta.minPaths[type]}/${image}" tabindex="0">`;
   });
   html += '</div></div>';
 
