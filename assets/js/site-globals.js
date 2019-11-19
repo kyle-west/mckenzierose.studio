@@ -11,7 +11,7 @@
   }
 
   SITE.fetchTEXT = (...args) => {
-    console.log('FETCHING HTML')
+    console.log('FETCHING HTML', args)
     return window.fetch(...args).then(res => {
       return res.text();
     });

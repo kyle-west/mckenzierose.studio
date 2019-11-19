@@ -12,7 +12,11 @@
 
 // Set up routes that we will handle locally
 window.localizedRoutes = [
-  'illustrations', 'character-design','animals', 'contact', 'black-and-white'
+  'illustrations', 
+  'character-design',
+  'animals',
+  'black-and-white',
+  'contact'
 ];
 
 // handle deprecated or invalid routes
