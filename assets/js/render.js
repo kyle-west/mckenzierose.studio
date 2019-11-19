@@ -13,16 +13,24 @@ function conditionalRender (assets, page) {
   }
 }
 
+function conditionalStaticPageRender(page) {
+  if (SITE.cache[page]) {
+    document.querySelector('main').innerHTML = SITE.cache[page];
+  } else {
+    SITE.fetchTEXT(`${SITE.paths.html}${page}.html`).then((html) => {
+      SITE.cache[page] = html;
+      return html
+    }).then(renderStaticPage)
+  }
+}
+
 function render (assets) {
   let page = getPage();
   selectTab(page);
   switch (page) {
     case "contact":
-      if (SITE.cache.contact) {
-        document.querySelector('main').innerHTML = SITE.cache.contact;
-      } else {
-        SITE.fetchTEXT(SITE.paths.html + 'contact.html').then(renderContactPage);
-      }
+    case "character-design":
+      conditionalStaticPageRender(page)
       break;
     default: conditionalRender(assets, page)
   }
@@ -38,9 +46,8 @@ function getPage () {
   return SITE.nav.getActivePage();
 }
 
-function renderContactPage (html) {
+function renderStaticPage (html) {
   document.querySelector('main').innerHTML = html;
-  SITE.cache.contact = html;
 }
 
 const humanReadable = str => str.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
