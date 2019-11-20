@@ -9,12 +9,12 @@
 
 .column {
   flex: 33%;
-  max-width: calc(33% - 8px);
-  padding: 0 4px;
+  max-width: calc(33% - 16px);
+  padding: 0 8px;
 }
 
 .column img {
-  margin-top: 8px;
+  margin-top: 16px;
   vertical-align: middle;
   max-width: calc(100%);
 }

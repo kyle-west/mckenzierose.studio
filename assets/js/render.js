@@ -57,7 +57,7 @@ const pageDividerIntervals = {
   'animals' : 2.5,
 }
 
-function renderImages (images, type) {
+function renderImages (images, type, selector = 'main') {
   console.log(`renderImages: calculating renderables for '${type}'`)
   let colOpen = false;
   let interval = Math.floor(images.length / (pageDividerIntervals[type] || 3));
@@ -73,6 +73,6 @@ function renderImages (images, type) {
   });
   html += '</div></div>';
 
-  document.querySelector('main').innerHTML = html;
+  document.querySelector(selector).innerHTML = html;
   return html;
 }
