@@ -2,7 +2,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136826563-1"></script>
 <script>
   if (window.location.hostname === 'localhost') {
-    console.log('[GTAG]: tracking disabled on localhost')
+    console.log('[GTAG]: tracking disabled on localhost, printing to console')
+    window.gtag = (...args) => console.log('[GTAG]: TRACK MOCKING: ', ...args) 
   } else {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
