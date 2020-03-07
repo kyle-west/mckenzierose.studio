@@ -1,0 +1,41 @@
+/* ADAPTED FROM: https://w3bits.com/css-masonry/ */
+
+
+/* Box-sizing reset: //w3bits.com/?p=3225 */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* The Masonry Container */
+.masonry {
+  margin: 16px auto;
+  column-gap: 16px;
+}
+
+/* The Masonry Brick */
+.brick {
+  margin: 0 0 16px;
+}
+.brick img {
+  width: 100%;
+}
+
+/* Masonry on large screens */
+@media only screen and (min-width: 800px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+/* Masonry on small screens */
+@media only screen and (max-width: 800px) and (min-width: 540px) {
+  .masonry {
+    column-count: 2;
+  }
+}

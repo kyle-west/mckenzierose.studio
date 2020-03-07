@@ -53,25 +53,21 @@ function renderStaticPage (html) {
 const humanReadable = str => str.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
 
 const pageDividerIntervals = {
-  'illustrations' : 2.5,
+  'illustrations' : 3,
   'animals' : 2.5,
 }
 
 function renderImages (images, type, selector = 'main') {
   console.log(`renderImages: calculating renderables for '${type}'`)
-  let colOpen = false;
-  let interval = Math.floor(images.length / (pageDividerIntervals[type] || 3));
-  html = '<div class="illustration-wrapper row"><div class="column">';
-  images.forEach((image, idx) => {
-    if (idx > 0 && idx % interval === 0) {
-      html += "</div><div class='column'>";
-    }
 
+  let html = '<div class="masonry">';
+  images.forEach((image) => {
     let [name] = image.split('.')
     let altText = `${humanReadable(window.getPage())}: ${humanReadable(name)}`
-    html += `<img alt="${altText}" class="showcase-image" src="${SITE.assets.meta.minPaths[type]}/${image}" tabindex="0">`;
+    html += `<div class="brick"><img alt="${altText}" src="${SITE.assets.meta.minPaths[type]}/${image}" tabindex="0"></div>`;
   });
-  html += '</div></div>';
+  html += '</div>';
+
 
   document.querySelector(selector).innerHTML = html;
   return html;
