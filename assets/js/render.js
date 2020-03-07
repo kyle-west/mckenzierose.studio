@@ -52,11 +52,6 @@ function renderStaticPage (html) {
 
 const humanReadable = str => str.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
 
-const pageDividerIntervals = {
-  'illustrations' : 3,
-  'animals' : 2.5,
-}
-
 function renderImages (images, type, selector = 'main') {
   console.log(`renderImages: calculating renderables for '${type}'`)
 
