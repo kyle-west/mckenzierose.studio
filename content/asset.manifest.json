@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_updated": "2019-11-15T21:49:38.566Z",
+    "last_updated": "2020-03-06T23:38:45.041Z",
     "counts": {
       "animals": 8,
       "black-and-white": 10,
-      "illustrations": 17,
-      "character-design": 25
+      "illustrations": 19,
+      "character-design": 27
     },
     "paths": {
       "animals": "./content/images/animals",
@@ -30,22 +30,22 @@
     "caiman-lizard.jpg",
     "deer-momma-and-baby-night.jpg",
     "deer-momma-and-baby.jpg",
-    "fox.jpg",
-    "i-see-a-deer.jpg",
+    "momma-and-me-panda.jpg",
     "momma-and-me-elephant.jpg",
-    "momma-and-me-giraffe.jpg",
-    "momma-and-me-panda.jpg"
+    "i-see-a-deer.jpg",
+    "fox.jpg",
+    "momma-and-me-giraffe.jpg"
   ],
   "black-and-white": [
     "inktober-2018-01-sunflower.jpg",
-    "inktober-2018-02-bear.jpg",
-    "inktober-2018-03-pumpkins.jpg",
+    "inktober-2018-18-dino.jpg",
     "inktober-2018-05-dog.jpg",
+    "inktober-2018-03-pumpkins.jpg",
     "inktober-2018-06-lion.jpg",
     "inktober-2018-11-max.jpg",
     "inktober-2018-12-flower.jpg",
     "inktober-2018-16-deer.jpg",
-    "inktober-2018-18-dino.jpg",
+    "inktober-2018-02-bear.jpg",
     "inktober-2018-24-tree.jpg"
   ],
   "illustrations": [
@@ -57,6 +57,7 @@
     "ghana-trees.jpg",
     
     "forest.jpg",
+    "bee-parade.jpg",
     "prince-percy-carriage.jpg",
     "folktake-week-2019.jpg",
     "melissa-book-cover.jpg",
@@ -65,36 +66,9 @@
     
     "prince-percy-trees.jpg",
     "darkness.jpg",
+    "community-garden.jpg",
     "snow-white-red-rose.jpg",
     "tree-house-town-kids.jpg",
     "winter-treehouse.jpg"
-  ],
-  "character-design": [
-    "character-lineup-0.jpg",
-    "character-robin-1.jpg",
-    "character-prince-percy.jpg",
-    "prince-percy-tree.jpg",
-    "character-efe.jpg",
-    "book-cover-efe.jpg",
-    "frida-kahlo.jpg",
-    "character-babushka.jpg",
-    
-    "character-malia-1.jpg",
-    "character-lineup-1.jpg",
-    "prince-percy-ground.jpg",
-    "prince-percy-street.jpg",
-    "african-hut.jpg",
-    "african-market.jpg",
-    "katherine-johnson.jpg",
-    "character-boris.jpg",
-    
-    "character-omar-1.jpg",
-    "character-lineup-2.jpg",
-    "prince-percy-horse.jpg",
-    "prince-percy-thrown.jpg",
-    "african-family.jpg",
-    "books.jpg",
-    "swimming-in-clouds.jpg",
-    "russian-birthday.jpg"
   ]
 }

@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sh _scripts/build.sh",
-    "start": "python3 -m http.server 5000",
+    "start": "npx serve",
     "preinstall": "sh _scripts/preinstall.sh",
     "postinstall": "sh _scripts/postinstall.sh"
   },
