@@ -8,9 +8,9 @@
 }
 
 .icon.instagram {
-  background-image: url('../icons/instagram.png');
+  background-image: url('./assets/icons/instagram.png');
 }
 
 .icon.etsy {
-  background-image: url('../icons/etsy.png');
+  background-image: url('./assets/icons/etsy.png');
 }

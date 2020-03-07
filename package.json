@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sh _scripts/build.sh",
+    "build:prod": "sh _scripts/build.sh --production",
     "start": "npx serve",
     "preinstall": "sh _scripts/preinstall.sh",
     "postinstall": "sh _scripts/postinstall.sh"
@@ -12,6 +13,8 @@
   "author": "kyle-west",
   "license": "UNLICENSED",
   "dependencies": {
-    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git"
+    "jsdom": "^16.2.0",
+    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git",
+    "node-minify": "^3.6.0"
   }
 }
