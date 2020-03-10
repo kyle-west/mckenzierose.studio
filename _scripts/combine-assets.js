@@ -2,9 +2,9 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const minifier = require('node-minify');
 
-const isProductionBuild = process.argv.includes('--production')
+const isDebugBuild = process.argv.includes('--debug')
 
-console.log(`isProductionBuild: ${isProductionBuild}`)
+isDebugBuild && console.log(`isDebugBuild: ${isDebugBuild}`)
 
 const fs = require('fs')
 
@@ -17,16 +17,16 @@ const isLocalAsset = (asset) => asset && asset.startsWith('./assets/')
 
 
 const globularize = (input, output, compressor) => {
-  if (isProductionBuild) {
+  if (isDebugBuild) {
+    const content = input.map(x => fs.readFileSync(x).toString()).join('\n/************/\n')
+    fs.writeFile(output, content, handleWith(() => console.log('write:', output)))
+  } else {
     return minifier.minify({
       input,
       output,
       compressor,
       callback: handleWith(() => console.log('write:', output))
     });
-  } else {
-    const content = input.map(x => fs.readFileSync(x).toString()).join('\n/************/\n')
-    fs.writeFile(output, content, handleWith(() => console.log('write:', output)))
   }
 }
 

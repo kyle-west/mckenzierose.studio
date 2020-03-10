@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sh _scripts/build.sh",
+    "build:watch": "npx watch 'npm run build' ./_src",
     "build:prod": "sh _scripts/build.sh --production",
+    "build:prod:watch": "npx watch 'npm run build:prod' ./_src ./assets",
     "start": "npx serve",
     "preinstall": "sh _scripts/preinstall.sh",
     "postinstall": "sh _scripts/postinstall.sh"
