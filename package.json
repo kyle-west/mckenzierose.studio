@@ -8,6 +8,8 @@
     "build:watch": "npx watch 'npm run build' ./_src",
     "build:prod": "sh _scripts/build.sh --production",
     "build:prod:watch": "npx watch 'npm run build:prod' ./_src ./assets",
+    "build:analyze": "sh _scripts/analyze.sh",
+    "build:compare": "npm run build:analyze -- --all | grep 'total data compression' | sort",
     "start": "npx serve",
     "preinstall": "sh _scripts/preinstall.sh",
     "postinstall": "sh _scripts/postinstall.sh"
