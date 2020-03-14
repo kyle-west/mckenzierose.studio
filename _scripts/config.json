@@ -1,0 +1,4 @@
+{
+  "jsCompressor": "terser",
+  "cssCompressor": "crass"
+}

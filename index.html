@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136826563-1"></script>
-<script>
-  if (window.location.hostname === 'localhost') {
+<!doctype html><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136826563-1"></script><script>if (window.location.hostname === 'localhost') {
     console.log('[GTAG]: tracking disabled on localhost, printing to console')
     window.gtag = (...args) => console.log('[GTAG]: TRACK MOCKING: ', ...args) 
   } else {
@@ -12,58 +6,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-136826563-1');
-  }
-</script>
-
-<title>McKenzie Rose Studio</title>
-<meta charset="utf-8"/>
-<script src="./assets/js/routing.js"></script>
-<link rel="icon" type="image/png" href="/assets/icons/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./assets/css/style.css">
-<link rel="stylesheet" href="./assets/css/masonry.css">
-<link rel="stylesheet" href="./assets/css/icons.css">
-<link rel="stylesheet" href="./assets/css/illustrations.css">
-<script src="./assets/js/query-lite.js"></script>
-<script src="./assets/js/site-globals.js"></script>
-<script src="./assets/js/render.js"></script>
-<script src="./assets/js/image-placement.js"></script>
-
-<!-- social media configs -->
-<meta property="og:title"       content="McKenzie Rose Studio">
-<meta property="og:description" content="Children's Book Illustrator">
-<meta property="og:type"        content="website" />
-<meta property="og:image"       content="https://mckenzierose.studio/content/min/images/character-design/swimming-in-clouds.jpg">
-<meta property="og:url"         content="https://mckenzierose.studio/?page=illustrations">
-<meta name="twitter:card"       content="summary_large_image">
-  </head>
-  <body>
-    <section class="logo" aria-hidden="true">
-  <div class="img-wrapper">
-    <img alt="Rose Logo" src="/assets/icons/logo/flower.png">
-    <div class="name">
-      <img class="-m-" src="/assets/icons/logo/MCKENZIE.png" alt="McKenzie">
-      <img class="-r-" src="/assets/icons/logo/ROSE.png" alt="Rose">
-    </div>
-  </div>
-</section>
-
-    <nav tabindex="0">
-  <ul>
-    <!-- These are not real links, but we can make them look like that to a screen reader -->
-    <li role="link" href="./illustrations" name='illustrations'>Illustrations</li>
-    <li role="link" href="./character-design" name='character-design'>Character&nbsp;Design</li>
-    <li role="link" href="./animals" name='animals'>Animals</li>
-    <li role="link" href="./black-and-white" name='black-and-white'>Black&nbsp;&&nbsp;White</li>
-    <li role="link" href="./instagram" name='instagram'>Instagram</li>
-    <li role="link" href="./etsy" name='etsy'>Etsy</li>
-    <li role="link" href="./contact" name='contact'>Contact</li>
-  </ul>
-</nav>
-
-    <main></main>
-    <script>
-  (async () => {
+  }</script><title>McKenzie Rose Studio</title><meta charset=utf-8><link rel=icon type=image/png href=/assets/icons/favicon.png><meta name=viewport content="width=device-width,initial-scale=1"><meta property=og:title content="McKenzie Rose Studio"><meta property=og:description content="Children's Book Illustrator"><meta property=og:type content=website><meta property=og:image content=https://mckenzierose.studio/content/min/images/character-design/swimming-in-clouds.jpg><meta property=og:url content="https://mckenzierose.studio/?page=illustrations"><meta name=twitter:card content=summary_large_image><script src=./main.js></script><link href=./main.css rel=stylesheet><section class=logo aria-hidden=true><div class=img-wrapper><img alt="Rose Logo" src=/assets/icons/logo/flower.png><div class=name><img class=-m- src=/assets/icons/logo/MCKENZIE.png alt=McKenzie> <img class=-r- src=/assets/icons/logo/ROSE.png alt=Rose></div></div></section><nav tabindex=0><ul><li role=link href=./illustrations name=illustrations>Illustrations<li role=link href=./character-design name=character-design>Character&nbsp;Design<li role=link href=./animals name=animals>Animals<li role=link href=./black-and-white name=black-and-white>Black&nbsp;&amp;&nbsp;White<li role=link href=./instagram name=instagram>Instagram<li role=link href=./etsy name=etsy>Etsy<li role=link href=./contact name=contact>Contact</ul></nav><main></main><script>(async () => {
     let assets = await SITE.fetchJSON('./content/asset.manifest.json');
     window.SITE.assets = assets;
     render(assets);
@@ -72,7 +15,4 @@
       let page = node.getAttribute('name');
       SITE.nav.goto(page);
     })
-  })();
-</script>
-  </body>
-</html>
+  })();</script>

@@ -5,6 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sh _scripts/build.sh",
+    "build:watch": "npx watch 'npm run build' ./_src",
+    "build:prod": "sh _scripts/build.sh --production",
+    "build:prod:watch": "npx watch 'npm run build:prod' ./_src ./assets",
+    "build:analyze": "sh _scripts/analyze.sh",
+    "build:compare": "npm run build:analyze -- --all | grep 'total data compression' | sort",
     "start": "npx serve",
     "preinstall": "sh _scripts/preinstall.sh",
     "postinstall": "sh _scripts/postinstall.sh"
@@ -12,6 +17,8 @@
   "author": "kyle-west",
   "license": "UNLICENSED",
   "dependencies": {
-    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git"
+    "jsdom": "^16.2.0",
+    "mckenzierose.studio-content": "git+https://github.com/kyle-west/mckenzierose.studio-content.git",
+    "node-minify": "^3.6.0"
   }
 }
