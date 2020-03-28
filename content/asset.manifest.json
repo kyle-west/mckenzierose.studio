@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2020-03-14T20:43:01.709Z",
+    "last_updated": "2020-03-28T20:36:18.795Z",
     "counts": {
       "animals": 8,
       "black-and-white": 10,
-      "illustrations": 20,
+      "illustrations": 22,
       "character-design": 27
     },
     "paths": {
@@ -49,22 +49,24 @@
     "inktober-2018-24-tree.jpg"
   ],
   "illustrations": [
+    "bedtime-story-1.jpg",
+    "bedtime-story-2.jpg",
     "crown.jpg",
     "wizard-of-oz.jpg",
     "dance.jpg",
     "sheep-hill.jpg",
     "prince-percy-bridge.jpg",
     "grandma-crying.jpg",
-    "ghana-trees.jpg",
     
+    "ghana-trees.jpg",
     "forest.jpg",
     "bee-parade.jpg",
     "prince-percy-carriage.jpg",
     "folktake-week-2019.jpg",
     "melissa-book-cover.jpg",
     "sheep-farm.jpg",
-    "russian-landscape.jpg",
     
+    "russian-landscape.jpg",
     "prince-percy-trees.jpg",
     "darkness.jpg",
     "community-garden.jpg",
