@@ -5,12 +5,10 @@ function selectTab (page) {
   document.title = `McKenzie Rose Studio | ${subPage}`
 }
 
-function conditionalRender (assets, page) {
-  if (SITE.cache[page]) {
-    document.querySelector('main').innerHTML = SITE.cache[page];
-  } else {
-    SITE.cache[page] = renderImages(assets[page], page);
-  }
+function conditionalRender (assets, page, selector = 'main') {
+  const contents = SITE.cache[page] || renderImages(assets[page], page)
+  SITE.cache[page] = contents
+  return onlyChild(document.querySelector(selector), contents)
 }
 
 function conditionalStaticPageRender(page) {
@@ -50,20 +48,8 @@ function renderStaticPage (html) {
   document.querySelector('main').innerHTML = html;
 }
 
-const humanReadable = str => str.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
-
-function renderImages (images, type, selector = 'main') {
-  console.log(`renderImages: calculating renderables for '${type}'`)
-
-  let html = '<div class="masonry">';
-  images.forEach((image) => {
-    let [name] = image.split('.')
-    let altText = `${humanReadable(window.getPage())}: ${humanReadable(name)}`
-    html += `<div class="brick"><img alt="${altText}" src="${SITE.assets.meta.minPaths[type]}/${image}" tabindex="0"></div>`;
+function renderImages (images, type) {
+  return make('div', { className: 'masonry', 
+    children: images.map(image => make('image-thumbnail', { type, image, className: 'brick' }))
   });
-  html += '</div>';
-
-
-  document.querySelector(selector).innerHTML = html;
-  return html;
 }

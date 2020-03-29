@@ -75,5 +75,28 @@
     });
   }
 
-  window.SITE = SITE; 
+  window.SITE = SITE;
+
+
+  window.make = (type, { children = [], ...props } = {}, attrs = {}) => {
+    let elem = document.createElement(type)
+    Object.assign(elem, props)
+    if (children instanceof Array) {
+      children.forEach(child => elem.appendChild(child))
+    } else if (children instanceof Node) {
+      elem.appendChild(children)
+    } else {
+      elem.innerText = children
+    }
+    Object.entries(attrs).forEach(([k,v]) => elem.setAttribute(k,v))
+    return elem
+  } 
+
+  window.onlyChild = (elem, child) => {
+    while (elem.firstChild) {
+      elem.removeChild(elem.firstChild);
+    }
+    elem.appendChild(child)
+    return elem
+  }
 })(window);
