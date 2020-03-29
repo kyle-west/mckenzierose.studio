@@ -75,6 +75,78 @@ section.logo .name img {
   height: 75px;
 }
 
+image-thumbnail img {
+  cursor: pointer;
+}
+
+image-carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111c;
+  transition: all 0.3s;
+}
+
+image-carousel .image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+image-carousel img {
+  z-index: 1;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+image-carousel button {
+  all: unset;
+  position: absolute;
+  cursor: pointer;
+  background: #999;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  opacity: .5;
+  transition: all 0.3s;
+}
+image-carousel button:hover {
+  background: #aaa;
+  opacity: 1;
+}
+
+image-carousel button.exit {
+  top: 15px;
+  right: 15px;
+}
+
+image-carousel button.next {
+  top: 50%;
+  right: 15px;
+  padding-bottom: 8px;
+}
+image-carousel button.prev {
+  top: 50%;
+  left: 15px;
+  padding-bottom: 8px;
+}
+
 @media screen and (max-width: 650px) {
   section.logo .img-wrapper {
     display: flex;
@@ -106,6 +178,12 @@ section.logo .name img {
 
   nav ul li {
     padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  image-thumbnail img {
+    cursor: default;
   }
 }
 
