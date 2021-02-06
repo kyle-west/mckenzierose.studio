@@ -4,15 +4,15 @@
   "description": "The best artist in the word needs a website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sh _scripts/build.sh",
+    "build": "bash _scripts/build.sh",
     "build:watch": "npx watch 'npm run build' ./_src",
-    "build:prod": "sh _scripts/build.sh --production",
+    "build:prod": "bash _scripts/build.sh --production",
     "build:prod:watch": "npx watch 'npm run build:prod' ./_src ./assets",
-    "build:analyze": "sh _scripts/analyze.sh",
+    "build:analyze": "bash _scripts/analyze.sh",
     "build:compare": "npm run build:analyze -- --all | grep 'total data compression' | sort",
     "start": "npx serve",
-    "preinstall": "sh _scripts/preinstall.sh",
-    "postinstall": "sh _scripts/postinstall.sh"
+    "preinstall": "bash _scripts/preinstall.sh",
+    "postinstall": "bash _scripts/postinstall.sh"
   },
   "author": "kyle-west",
   "license": "UNLICENSED",

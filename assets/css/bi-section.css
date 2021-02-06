@@ -55,4 +55,8 @@
   .bi-section .data {
     text-align: center;
   }
+
+  .bi-section li {
+    list-style: none;
+  }
 }
